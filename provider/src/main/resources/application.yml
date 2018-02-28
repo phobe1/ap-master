@@ -1,0 +1,42 @@
+server:
+  port: 8900
+  displayName: ap
+  context-path: /ap
+jetty:
+  threadPool:
+      maxThreads: 200
+      minThreads: 10
+      idleTimeout: 30000
+
+spring:
+    datasource:
+        name: ap
+        url: jdbc:mysql://47.104.8.224:3306/ap?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+        username: apadmin
+        password: mIpXadp6k+h,
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 16
+        initialSize: 4
+        maxWait: 3000
+        minIdle: 4
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 1
+        testWhileIdle: true
+        testOnBorrow: false
+        dbc_connectionInitSqls: SET NAMES utf8mb4
+mybatis:
+    configLocation: classpath:/mybatis-config.xml
+
+
+message:
+    pusher:
+        regionId: cn-beijing
+        accessKeyId: LTAIoAqtH1AAgl30
+        accessKeySecret: hx1kgkQtASGW1EfoSb6D0QLdvYxm3A
+        studentAppKey: 24736957
+        teacherAppKey: 24750332
+
+
